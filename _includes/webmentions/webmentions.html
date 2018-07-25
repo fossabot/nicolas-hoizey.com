@@ -13,15 +13,7 @@
               <div class="webmention__author p-author h-card">
                 <!-- nomicrotypo -->
                 <a class="u-url" href="{{ webmention.author.url }}">
-                  {% if webmention.author.photo %}
-                    <img
-                      class="webmention__author__photo u-photo"
-                      data-src="https://res.cloudinary.com/nho/image/fetch/c_fill,f_auto,q_auto,w_48,h_48/{{ webmention.author.photo }}"
-                      data-srcset="https://res.cloudinary.com/nho/image/fetch/c_fill,f_auto,q_auto,w_48,h_48/{{ webmention.author.photo }} 1x, https://res.cloudinary.com/nho/image/fetch/c_fill,f_auto,q_auto,w_96,h_96/{{ webmention.author.photo }} 2x"
-                      width= "48"
-                      height="48"
-                      alt="{{ webmention.author.name }} avatar" />
-                  {% endif %}
+                  {% include webmentions/author-photo author=webmention.author %}
                   <b class="p-name">{{ webmention.author.name }}</b></a>
                   <!-- endnomicrotypo -->
                 <a class="deeplink" href="#webmention-{{ webmention.id }}"><svg><use xlink:href="#symbol-link" /></svg></a>
